@@ -9,6 +9,10 @@ const initState = {
 //input: state action
 const counter = (state = initState, action) => {
   switch (action.type) {
+    case "plus_one":
+      return { number: state.number + 1 };
+    case "minus_one":
+      return { number: state.number - 1 }
     default:
       return state;
   }
