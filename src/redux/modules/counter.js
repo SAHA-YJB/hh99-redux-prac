@@ -1,3 +1,15 @@
+//action value
+export const PLUS_ONE = "counter/PLUS_ONE";
+export const MINUS_ONE = "counter/MINUS_ONE";
+
+//action creater: action value를 리턴하는 함수
+export const plusOne=()=>{
+  return {type: PLUS_ONE}
+}
+export const minusOne=()=>{
+  return {type: MINUS_ONE}
+}
+
 //초기상태값
 const initState = {
   number: 0,
@@ -9,10 +21,10 @@ const initState = {
 //input: state action
 const counter = (state = initState, action) => {
   switch (action.type) {
-    case "plus_one":
+    case PLUS_ONE:
       return { number: state.number + 1 };
-    case "minus_one":
-      return { number: state.number - 1 }
+    case MINUS_ONE:
+      return { number: state.number - 1 };
     default:
       return state;
   }

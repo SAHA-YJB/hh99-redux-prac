@@ -1,5 +1,9 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
+import { PLUS_ONE } from "./redux/modules/counter";//actionValue
+import { MINUS_ONE } from "./redux/modules/counter";//actionValue
+import { plusOne } from "./redux/modules/counter";//actionCreate
+import { minusOne } from "./redux/modules/counter";//actionCreate
 function App() {
   //store에 접근하여 카운터의 값을 읽어오고 싶다
   //useSelector
@@ -13,18 +17,14 @@ function App() {
       <div>현재카운트 : {counter.number}</div>
       <button
         onClick={() => {
-          dispatch({
-            type: "plus_one",
-          });
+          dispatch(plusOne());
         }}
       >
         +
       </button>
       <button
         onClick={() => {
-          dispatch({
-            type: "minus_one",
-          });
+          dispatch(minusOne());
         }}
       >
         -
